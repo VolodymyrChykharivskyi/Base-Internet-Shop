@@ -11,10 +11,15 @@ import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, AdminRoutingModule],
-  exports: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AdminRoutingModule
+  ],
   declarations: [
     AdminLayoutComponent,
     LoginComponent,
@@ -22,6 +27,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
     DashboardComponent,
     ProductEditComponent,
     OrdersComponent
-  ]
+  ],
+  exports: [],
 })
 export class AdminModule {}

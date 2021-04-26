@@ -12,7 +12,7 @@ import { ProductEditComponent } from './pages/product-edit/product-edit.componen
 const routes: Routes = [
   {
     path: '', component: AdminLayoutComponent, children: [
-      { path: '', redirectTo: 'admin/login', pathMatch: 'full' },
+      { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'add', component: ProductAddComponent },
