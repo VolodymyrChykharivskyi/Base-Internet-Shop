@@ -11,6 +11,11 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 
+/** Services */
+import { AuthService } from './shared/services/auth.service';
+
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +26,10 @@ import { ProductComponent } from './components/product/product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
