@@ -14,7 +14,8 @@ import { ProductComponent } from './components/product/product.component';
 /** Services */
 import { AuthService } from './shared/services/auth.service';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    QuillModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
