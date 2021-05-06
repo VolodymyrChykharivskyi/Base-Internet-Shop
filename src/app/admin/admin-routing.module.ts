@@ -8,16 +8,17 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { AuthGuard } from '../shared/auth.guard';
 
 const routes: Routes = [
   {
     path: '', component: AdminLayoutComponent, children: [
       { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'add', component: ProductAddComponent },
-      { path: 'orders', component: OrdersComponent },
-      { path: 'product/:id/edit', component: ProductEditComponent }
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'add', component: ProductAddComponent, canActivate: [AuthGuard] },
+      { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
+      { path: 'product/:id/edit', component: ProductEditComponent, canActivate: [AuthGuard] }
     ]
   },
 ];
